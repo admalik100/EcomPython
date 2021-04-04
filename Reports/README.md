@@ -1,0 +1,1 @@
+This folder contains reports. They reports are generated after running test.
