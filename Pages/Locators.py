@@ -1,3 +1,4 @@
+# user Def helper function to find elements in cases where same id/class used for multiple elements
 class ElemLocators:
 
     def by_css_containing_text(driver, selector, text):

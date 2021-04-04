@@ -12,7 +12,6 @@ import unittest
 class CheckOut(unittest.TestCase):
     @classmethod
     def setUp(cls):
-        # cls.driver = webdriver.Chrome(executable_path="../Drivers/chromedriver")
         cls.driver = webdriver.Chrome(executable_path="../Drivers/chromedriver")
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
