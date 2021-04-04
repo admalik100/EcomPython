@@ -19,22 +19,23 @@ class CheckOut(unittest.TestCase):
     def test_checkout(self):
         try:
             self.driver.get("https://www.ounass.ae/")
-            time.sleep(5)
+            WebDriverWait(self.driver,10).until(
+                EC.presence_of_element_located((By.ID, "wzrk-cancel"))
+            )
             print("Shift to div")
             dialog_box_cancel = self.driver.find_element_by_id("wzrk-cancel")
             dialog_box_cancel.click()
-            time.sleep(5)
             link_women = ElemLocators.by_css_containing_text(self.driver, ".Gender-title", "WOMEN")
             link_women[0].click()
-            time.sleep(5)
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "ProductSlider-title"))
+            )
             product_recommended = self.driver.find_element_by_class_name("ProductSlider-title")
             actions = ActionChains(self.driver)
             actions.move_to_element(product_recommended).perform()
-            time.sleep(5)
             product_recommended_shop_all = ElemLocators.by_css_containing_text(self.driver, ".ProductSlider-ctaLink",
                                                                                "SHOP ALL")
             product_recommended_shop_all[0].click()
-            time.sleep(5)
             item_1 = ElemLocators.by_css_containing_text(self.driver, ".Product-name",
                                                          "Botanica Smocked Yoke Mini Dress in Silk")
             item_1[0].click()
@@ -75,8 +76,6 @@ class CheckOut(unittest.TestCase):
                                                                                     "-submitButton")
             actions = ActionChains(self.driver)
             actions.move_to_element(customer_checkout_continue_btn).perform()
-
-            time.sleep(5)
         except Exception as ex:
             print(ex)
             self.driver.close()

@@ -7,7 +7,7 @@ from Models.English.CheckOut import CheckOut
 tc1 = unittest.TestLoader().loadTestsFromTestCase(GoogleSearch)
 tc2 = unittest.TestLoader().loadTestsFromTestCase(CheckOut)
 
-masterTestSuite = unittest.TestSuite([tc1, tc2])
+masterTestSuite = unittest.TestSuite([tc1])
 # Run testCases Suite
 unittest.TextTestRunner(verbosity=2).run(masterTestSuite)
 
