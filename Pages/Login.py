@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class LoginPage:
 
-        cred_usrname = "samad@werplay.com"
-        cred_pwrd = "werplayru55"
+        cred_usrname = process.env.user
+        cred_pwrd = process.env.pass
 
 
