@@ -41,8 +41,8 @@ class GoogleSearch(unittest.TestCase):
             usr_name = self.driver.find_element_by_css_selector("#email")
             pwd = self.driver.find_element_by_css_selector("#pass")
             fb_login_btn = self.driver.find_element_by_css_selector("#loginbutton")
-            usr_name.send_keys("samad@werplay.com")
-            pwd.send_keys("werplayru55")
+            usr_name.send_keys("user")
+            pwd.send_keys("pass")
             fb_login_btn.click()
             WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, ".Popup-iconText")))
